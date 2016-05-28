@@ -3,8 +3,6 @@ package pl.pawc.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import pl.pawc.model.User;
 
 public class Controller {
@@ -14,16 +12,10 @@ public class Controller {
   @FXML protected TextField hashedPass;
   @FXML protected Button saveButton;
   @FXML protected Button loadButton;
-  protected AbstractApplicationContext context;
-  protected User user;
-
+  @FXML protected User user;
   
   public void initialize(){
-     context = new ClassPathXmlApplicationContext("SpringXMLConfig.xml");
-     user = (User) context.getBean("user");
-
-     load();
-    
+         
     loadButton.setOnAction(event -> {
       load();
     });
@@ -32,6 +24,14 @@ public class Controller {
       save();
     });
     
+  }
+  
+  public void setUser(User user){
+    this.user=user;
+  }
+  
+  public User getUser(){
+    return user;
   }
   
   public void load(){

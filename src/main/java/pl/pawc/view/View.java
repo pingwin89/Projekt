@@ -13,15 +13,21 @@ import javafx.stage.WindowEvent;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import pl.pawc.controller.Controller;
+import pl.pawc.model.User;
 
 public class View extends Application {
-  
+
+    protected AbstractApplicationContext context;
+    
 	@Override
 	public void start(Stage primaryStage) throws IOException {
-       
+         context = new ClassPathXmlApplicationContext("SpringXMLConfig.xml");
+         User user = (User) context.getBean("user");
          FXMLLoader loader = new FXMLLoader(getClass().getResource("/Main.fxml"));
          AnchorPane anchorPane = (AnchorPane) loader.load();
 		primaryStage.setTitle("Projekt");
+         Controller controller = (Controller) loader.getController();
+         controller.setUser(user);
 		Scene scene = new Scene(anchorPane);
 		primaryStage.setScene(scene);
          primaryStage.show();
