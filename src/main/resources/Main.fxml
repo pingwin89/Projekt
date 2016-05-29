@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="236.0" prefWidth="249.00007792968245" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="pl.pawc.controller.Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="243.0" prefWidth="249.00007792968245" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="pl.pawc.controller.Controller">
   <children>
     <AnchorPane layoutX="14.0" layoutY="22.0" prefHeight="200.0" prefWidth="200.0">
       <children>
@@ -16,6 +16,8 @@
         <TextField fx:id="hashedPass" layoutX="14.0" layoutY="112.0" prefWidth="200.0" />
         <Button id="refresh" fx:id="loadButton" layoutX="136.0" layoutY="159.0" mnemonicParsing="false" text="load" />
         <Button id="refresh" fx:id="saveButton" layoutX="38.0" layoutY="159.0" mnemonicParsing="false" text="save" />
+        <Button id="refresh" fx:id="startButton" layoutX="38.0" layoutY="186.0" mnemonicParsing="false" text="start" />
+        <Button id="refresh" fx:id="stopButton" layoutX="136.0" layoutY="186.0" mnemonicParsing="false" text="stop" />
       </children>
     </AnchorPane>
   </children>

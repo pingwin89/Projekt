@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import pl.pawc.model.User;
+import pl.pawc.view.View;
 
 public class Controller {
   @FXML protected TextField login;
@@ -12,7 +13,10 @@ public class Controller {
   @FXML protected TextField hashedPass;
   @FXML protected Button saveButton;
   @FXML protected Button loadButton;
-  @FXML protected User user;
+  @FXML protected Button stopButton;
+  @FXML protected Button startButton;
+  protected User user;
+  protected View view;
   
   public void initialize(){
          
@@ -22,6 +26,14 @@ public class Controller {
     
     saveButton.setOnAction(event ->{
       save();
+    }); 
+    
+    startButton.setOnAction(event ->{
+      view.getContext().start();
+    });
+    
+    stopButton.setOnAction(event ->{
+      view.getContext().stop();
     });
     
   }
@@ -33,6 +45,15 @@ public class Controller {
   public User getUser(){
     return user;
   }
+  
+  public void setView(View view){
+    this.view=view;
+  }
+  
+  public View getView(){
+    return view;
+  }
+  
   
   public void load(){
     login.setText(user.getLogin());

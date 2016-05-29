@@ -1,4 +1,4 @@
-package pl.pawc;
+package pl.pawc.view;
 
 import java.io.IOException;
 
@@ -21,16 +21,17 @@ public class View extends Application {
     
 	@Override
 	public void start(Stage primaryStage) throws IOException {
-         context = new ClassPathXmlApplicationContext("SpringXMLConfig.xml");
-         User user = (User) context.getBean("user");
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Main.fxml"));
-         AnchorPane anchorPane = (AnchorPane) loader.load();
-		primaryStage.setTitle("Projekt");
-         Controller controller = (Controller) loader.getController();
-         controller.setUser(user);
-		Scene scene = new Scene(anchorPane);
-		primaryStage.setScene(scene);
-         primaryStage.show();
+      context = new ClassPathXmlApplicationContext("SpringXMLConfig.xml");
+      User user = (User) context.getBean("user");
+      FXMLLoader loader = new FXMLLoader(getClass().getResource("/Main.fxml"));
+      AnchorPane anchorPane = (AnchorPane) loader.load();
+      primaryStage.setTitle("Projekt");
+      Controller controller = (Controller) loader.getController();
+      controller.setView(this);
+      controller.setUser(user);
+      Scene scene = new Scene(anchorPane);
+      primaryStage.setScene(scene);
+      primaryStage.show();
 		
 		primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>(){
 			@Override
@@ -43,4 +44,8 @@ public class View extends Application {
 	public void main() {
 		launch();
 	}
+  
+    public AbstractApplicationContext getContext(){
+      return context;
+    }
 }

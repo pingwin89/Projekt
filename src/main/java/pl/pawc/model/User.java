@@ -1,6 +1,11 @@
 package pl.pawc.model;
 
-public class User{
+import org.springframework.context.ApplicationEvent;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.ContextStartedEvent;
+import org.springframework.context.event.ContextStoppedEvent;
+
+public class User implements ApplicationListener {
   
   private String login;
   private String hashedPass;
@@ -37,6 +42,22 @@ public class User{
 
   public String getLocation() {
     return location;
+  }
+  
+  @Override
+  public void onApplicationEvent(ApplicationEvent e) {
+    if(e instanceof ContextStartedEvent){
+      login="started";
+      email="started";
+      location="started";
+      hashedPass="started";
+    }
+    if(e instanceof ContextStoppedEvent){
+      login="stopped";
+      email="stopped";
+      location="stopped";
+      hashedPass="stopped";
+    }
   }
  
 }
