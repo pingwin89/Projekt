@@ -16,6 +16,7 @@ public class Controller{
   @FXML protected Button stopButton;
   @FXML protected Button startButton;
   @FXML protected Button customButton;
+  @FXML protected Button queryButton;
   protected User user;
   protected View view;
   
@@ -39,6 +40,10 @@ public class Controller{
     
     customButton.setOnAction(event ->{
       view.getCustomEventPublisher().publish();
+    });
+    
+    queryButton.setOnAction(event ->{
+      setUser(view.getUserJDBCTemplate().getUser(1));
     });
     
   }

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="251.0" prefWidth="249.00007792968245" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="pl.pawc.controller.Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="262.0" prefWidth="249.00007792968245" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="pl.pawc.controller.Controller">
   <children>
     <AnchorPane layoutX="14.0" layoutY="7.0" prefHeight="207.0" prefWidth="221.00006103515625">
       <children>
@@ -20,6 +20,7 @@
         <Button id="refresh" fx:id="stopButton" layoutX="136.0" layoutY="186.0" mnemonicParsing="false" text="stop" />
       </children>
     </AnchorPane>
-    <Button id="refresh" fx:id="customButton" layoutX="90.0" layoutY="220.0" mnemonicParsing="false" text="custom" />
+    <Button id="refresh" fx:id="customButton" layoutX="44.0" layoutY="220.0" mnemonicParsing="false" text="custom" />
+    <Button fx:id="queryButton" layoutX="146.0" layoutY="221.0" mnemonicParsing="false" text="query" />
   </children>
 </AnchorPane>

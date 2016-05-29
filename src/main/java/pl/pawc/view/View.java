@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import pl.pawc.DAO.UserJDBCTemplate;
 import pl.pawc.controller.Controller;
 import pl.pawc.model.CustomEventPublisher;
 import pl.pawc.model.User;
@@ -20,6 +21,7 @@ public class View extends Application {
 
     protected AbstractApplicationContext context;
     protected CustomEventPublisher cep;
+    protected UserJDBCTemplate userJDBCTemplate;
     
 	@Override
 	public void start(Stage primaryStage) throws IOException {
@@ -27,7 +29,7 @@ public class View extends Application {
       context = new ClassPathXmlApplicationContext("SpringXMLConfig.xml");
       User user = (User) context.getBean("user");
       cep = (CustomEventPublisher) context.getBean("customEventPublisher");
-      
+      userJDBCTemplate = (UserJDBCTemplate) context.getBean("userJDBCTemplate");
       FXMLLoader loader = new FXMLLoader(getClass().getResource("/Main.fxml"));
         
       AnchorPane anchorPane = (AnchorPane) loader.load();
@@ -59,6 +61,10 @@ public class View extends Application {
     
     public CustomEventPublisher getCustomEventPublisher(){
       return cep;
+    }
+    
+    public UserJDBCTemplate getUserJDBCTemplate(){
+      return userJDBCTemplate;
     }
     
 }

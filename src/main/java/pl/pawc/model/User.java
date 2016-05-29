@@ -7,11 +7,16 @@ import org.springframework.context.event.ContextStoppedEvent;
 
 public class User implements ApplicationListener {
   
+  private int Id;
   private String login;
   private String hashedPass;
   private String email;
   private String location;
 
+  public void setId(int Id){
+    this.Id=Id;
+  }
+  
   public void setLogin(String login) {
     this.login = login;
   }
@@ -26,6 +31,10 @@ public class User implements ApplicationListener {
 
   public void setLocation(String location) {
     this.location = location;
+  }
+  
+  public int getId(){
+    return Id;
   }
 
   public String getLogin() {
