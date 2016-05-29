@@ -28,7 +28,7 @@ public class Controller{
     saveButton.setOnAction(event ->{
       save();
     }); 
-    
+    /*
     startButton.setOnAction(event ->{
       view.getContext().start();
     });
@@ -40,7 +40,7 @@ public class Controller{
     customButton.setOnAction(event ->{
       view.getCustomEventPublisher().publish();
     });
-    
+    */
   }
   
   public void setUser(User user){

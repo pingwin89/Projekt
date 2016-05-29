@@ -1,11 +1,12 @@
 package pl.pawc.model;
-
+/*
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextStartedEvent;
 import org.springframework.context.event.ContextStoppedEvent;
-
-public class User implements ApplicationListener {
+*/
+//User can not implement anything for AOP to work
+public class User{
   
   private String login;
   private String hashedPass;
@@ -43,7 +44,7 @@ public class User implements ApplicationListener {
   public String getLocation() {
     return location;
   }
-  
+  /*
   @Override
   public void onApplicationEvent(ApplicationEvent e) {
     if(e instanceof ContextStartedEvent){
@@ -65,5 +66,6 @@ public class User implements ApplicationListener {
       hashedPass="custom";
     }
   }
+  */
  
 }

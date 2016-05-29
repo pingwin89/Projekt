@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import org.springframework.context.ApplicationListener;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import pl.pawc.controller.Controller;
@@ -26,7 +27,7 @@ public class View extends Application {
     
       context = new ClassPathXmlApplicationContext("SpringXMLConfig.xml");
       User user = (User) context.getBean("user");
-      cep = (CustomEventPublisher) context.getBean("customEventPublisher");
+      //cep = (CustomEventPublisher) context.getBean("customEventPublisher");   
       
       FXMLLoader loader = new FXMLLoader(getClass().getResource("/Main.fxml"));
         
@@ -56,9 +57,9 @@ public class View extends Application {
     public AbstractApplicationContext getContext(){
       return context;
     }
-    
+    /*
     public CustomEventPublisher getCustomEventPublisher(){
       return cep;
     }
-    
+    */
 }
