@@ -58,6 +58,12 @@ public class User implements ApplicationListener {
       location="stopped";
       hashedPass="stopped";
     }
+    if(e instanceof CustomEvent){
+      login="custom";
+      email="custom";
+      location="custom";
+      hashedPass="custom";
+    }
   }
  
 }

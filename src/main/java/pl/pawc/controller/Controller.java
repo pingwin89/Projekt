@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 import pl.pawc.model.User;
 import pl.pawc.view.View;
 
-public class Controller {
+public class Controller{
   @FXML protected TextField login;
   @FXML protected TextField loc;
   @FXML protected TextField mail;
@@ -15,6 +15,7 @@ public class Controller {
   @FXML protected Button loadButton;
   @FXML protected Button stopButton;
   @FXML protected Button startButton;
+  @FXML protected Button customButton;
   protected User user;
   protected View view;
   
@@ -34,6 +35,10 @@ public class Controller {
     
     stopButton.setOnAction(event ->{
       view.getContext().stop();
+    });
+    
+    customButton.setOnAction(event ->{
+      view.getCustomEventPublisher().publish();
     });
     
   }
@@ -68,5 +73,5 @@ public class Controller {
     user.setEmail(mail.getText());
     user.setHashedPass(hashedPass.getText());
   }
-
+  
 }

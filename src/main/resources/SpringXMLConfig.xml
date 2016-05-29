@@ -12,4 +12,6 @@
         <property name="hashedPass" value="abc123"/>
 </bean>
 
+<bean id="customEventPublisher" class="pl.pawc.model.CustomEventPublisher"/>
+
 </beans>
