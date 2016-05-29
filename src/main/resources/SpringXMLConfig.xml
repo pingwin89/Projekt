@@ -17,9 +17,9 @@
 <bean id="dataSource"
 class="org.springframework.jdbc.datasource.DriverManagerDataSource">
    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-   <property name="url" value="jdbc:mysql://localhost:3306/testdb?useUnicode=true&amp;useJDBCCompliantTimezoneS‌​hift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
-   <property name="username" value="root"/>
-   <property name="password" value="tetrof"/>
+   <property name="url" value="jdbc:mysql://kritsit.ddns.net:3306/pawc_db?useUnicode=true&amp;useJDBCCompliantTimezoneS‌​hift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
+   <property name="username" value="pawc"/>
+   <property name="password" value="pawc_mysql_password"/>
 </bean>
 
 <bean id="userJDBCTemplate" class="pl.pawc.DAO.UserJDBCTemplate">

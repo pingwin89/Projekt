@@ -3,6 +3,7 @@ package pl.pawc.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import org.springframework.dao.EmptyResultDataAccessException;
 import pl.pawc.model.User;
 import pl.pawc.view.View;
 
@@ -11,12 +12,14 @@ public class Controller{
   @FXML protected TextField loc;
   @FXML protected TextField mail;
   @FXML protected TextField hashedPass;
+  @FXML protected TextField numberField;
   @FXML protected Button saveButton;
   @FXML protected Button loadButton;
   @FXML protected Button stopButton;
   @FXML protected Button startButton;
   @FXML protected Button customButton;
   @FXML protected Button queryButton;
+  @FXML protected Button insertButton;
   protected User user;
   protected View view;
   
@@ -42,8 +45,12 @@ public class Controller{
       view.getCustomEventPublisher().publish();
     });
     
-    queryButton.setOnAction(event ->{
-      setUser(view.getUserJDBCTemplate().getUser(1));
+    queryButton.setOnAction(event -> {
+    query();      
+    });
+    
+    insertButton.setOnAction(event ->{
+      view.getUserJDBCTemplate().create(login.getText(), loc.getText(), mail.getText(), hashedPass.getText());
     });
     
   }
@@ -77,6 +84,19 @@ public class Controller{
     user.setLocation(loc.getText());
     user.setEmail(mail.getText());
     user.setHashedPass(hashedPass.getText());
+  }
+  
+  public void query(){
+      int number;
+      try{
+        number=Integer.parseInt(numberField.getText());
+        setUser(view.getUserJDBCTemplate().getUser(number));
+        load();
+      }
+      catch(NumberFormatException | EmptyResultDataAccessException e){
+        System.out.println("Error");
+        return;
+      }
   }
   
 }

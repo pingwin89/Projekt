@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="262.0" prefWidth="249.00007792968245" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="pl.pawc.controller.Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="283.0" prefWidth="249.00007792968245" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="pl.pawc.controller.Controller">
   <children>
     <AnchorPane layoutX="14.0" layoutY="7.0" prefHeight="207.0" prefWidth="221.00006103515625">
       <children>
@@ -21,6 +21,8 @@
       </children>
     </AnchorPane>
     <Button id="refresh" fx:id="customButton" layoutX="44.0" layoutY="220.0" mnemonicParsing="false" text="custom" />
-    <Button fx:id="queryButton" layoutX="146.0" layoutY="221.0" mnemonicParsing="false" text="query" />
+    <Button fx:id="queryButton" layoutX="145.0" layoutY="220.0" mnemonicParsing="false" text="query" />
+    <Button fx:id="insertButton" layoutX="49.0" layoutY="248.0" mnemonicParsing="false" text="insert" />
+    <TextField fx:id="numberField" layoutX="155.0" layoutY="247.0" prefWidth="41.0" />
   </children>
 </AnchorPane>
